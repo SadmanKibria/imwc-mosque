@@ -1,40 +1,43 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export function Navigation() {
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#prayer-times", label: "Prayer Times" },
-    { href: "#services", label: "Services" },
-    { href: "#contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/services", label: "Services" },
+    { href: "/#prayer-times", label: "Prayer Times" },
+    { href: "/#contact", label: "Contact" },
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="h-10 w-10 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-serif text-xl">IM</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border/50 shadow-sm animate-slide-down">
+      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative h-14 w-14 transition-transform group-hover:scale-105">
+            <Image src="/imwc-logo.png" alt="Ilford Muslim Welfare Centre" fill className="object-contain" />
           </div>
-          <div className="hidden md:block">
-            <p className="font-serif font-semibold text-foreground">Ilford Muslim Welfare Centre</p>
-            <p className="text-xs text-muted-foreground">Serving the Community</p>
+          <div className="hidden lg:block">
+            <p className="font-serif font-bold text-foreground text-lg leading-tight">Ilford Muslim Welfare Centre</p>
+            <p className="text-xs text-muted-foreground">Serving the Community Since 1986</p>
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-foreground hover:text-primary transition-all hover:scale-105"
             >
               {link.label}
             </Link>
           ))}
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Donate Now</Button>
+          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-transform shadow-md">
+            Donate Now
+          </Button>
         </div>
 
         <Sheet>
