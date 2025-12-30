@@ -9,7 +9,6 @@ export function Navigation() {
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/#prayer-times", label: "Prayer Times" },
     { href: "/#contact", label: "Contact" },
   ]
 
@@ -40,13 +39,7 @@ export function Navigation() {
             asChild
             className="bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-transform shadow-md"
           >
-            <a
-              href="https://pay.sumup.com/b2c/QKLP1U1U?utm_campaign=pdf&utm_medium=print&utm_source=qr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Donate Now
-            </a>
+            <Link href="/donate">Donate Now</Link>
           </Button>
         </div>
 
@@ -69,13 +62,7 @@ export function Navigation() {
                 </Link>
               ))}
               <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 w-full">
-                <a
-                  href="https://pay.sumup.com/b2c/QKLP1U1U?utm_campaign=pdf&utm_medium=print&utm_source=qr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Donate Now
-                </a>
+                <Link href="/donate">Donate Now</Link>
               </Button>
             </div>
           </SheetContent>

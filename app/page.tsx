@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/hero-section"
 import { PrayerTimes } from "@/components/prayer-times"
 import { WhatsAppCommunity } from "@/components/whatsapp-community"
+import { YouthClub } from "@/components/youth-club"
 import { Services } from "@/components/services"
 import { MosqueGallery } from "@/components/mosque-gallery"
 import { Contact } from "@/components/contact"
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <PrayerTimes />
       <WhatsAppCommunity />
+      <YouthClub />
       <Services />
       <MosqueGallery />
       <Contact />
