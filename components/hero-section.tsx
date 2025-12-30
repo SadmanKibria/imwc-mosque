@@ -1,64 +1,18 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Clock, Users, BookOpen, ChevronLeft, ChevronRight, Calendar } from "lucide-react"
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [nextPrayer, setNextPrayer] = useState<{ name: string; time: string } | null>(null)
 
-  // Placeholder images - user will replace with actual mosque photos
   const carouselImages = [
-    { url: "/beautiful-mosque-exterior-modern.jpg", alt: "Mosque Exterior" },
-    { url: "/mosque-prayer-hall-interior.jpg", alt: "Prayer Hall" },
-    { url: "/islamic-school-children-learning.jpg", alt: "Madrasa Classes" },
+    { url: "/modern-mosque-exterior-with-green-dome.jpg", alt: "Mosque Exterior" },
+    { url: "/beautiful-prayer-hall-interior-with-carpets.jpg", alt: "Prayer Hall" },
+    { url: "/community-iftar-event-ramadan-gathering.jpg", alt: "Community Events" },
+    { url: "/children-learning-quran-islamic-education.jpg", alt: "Madrasa Classes" },
   ]
-
-  useEffect(() => {
-    const fetchNextPrayer = async () => {
-      try {
-        const today = new Date()
-        const response = await fetch(
-          `https://api.aladhan.com/v1/timingsByAddress/${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}?address=Ilford,UK&method=2`,
-        )
-        const data = await response.json()
-
-        if (data.code === 200) {
-          const timings = data.data.timings
-          const now = new Date()
-          const currentTime = now.getHours() * 60 + now.getMinutes()
-
-          const prayers = [
-            { name: "Fajr", time: timings.Fajr },
-            { name: "Dhuhr", time: timings.Dhuhr },
-            { name: "Asr", time: timings.Asr },
-            { name: "Maghrib", time: timings.Maghrib },
-            { name: "Isha", time: timings.Isha },
-          ]
-
-          for (const prayer of prayers) {
-            const [hours, minutes] = prayer.time.split(":").map(Number)
-            const prayerTime = hours * 60 + minutes
-
-            if (currentTime < prayerTime) {
-              setNextPrayer({ name: prayer.name, time: prayer.time })
-              break
-            }
-          }
-
-          if (!nextPrayer) {
-            setNextPrayer({ name: "Fajr", time: timings.Fajr })
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching prayer times:", error)
-      }
-    }
-
-    fetchNextPrayer()
-  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -79,7 +33,6 @@ export function HeroSection() {
     <section id="home" className="pt-20 md:pt-24 bg-gradient-to-b from-background via-muted/10 to-background">
       <div className="container mx-auto px-4 pb-8 md:pb-12">
         <div className="relative max-w-6xl mx-auto">
-          {/* Carousel */}
           <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
             {carouselImages.map((image, index) => (
               <div
@@ -89,49 +42,8 @@ export function HeroSection() {
                 }`}
               >
                 <img src={image.url || "/placeholder.svg"} alt={image.alt} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>
             ))}
-
-            {/* Overlay Content */}
-            <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
-              <div className="max-w-3xl animate-fade-in">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-balance leading-tight drop-shadow-lg">
-                  Welcome to Ilford Muslim Welfare Centre
-                </h1>
-
-                {/* Next Prayer Badge */}
-                {nextPrayer && (
-                  <div className="inline-flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-full px-5 py-3 mb-6 shadow-lg">
-                    <Clock className="h-5 w-5 text-primary" />
-                    <div className="text-sm font-semibold">
-                      <span className="text-muted-foreground">Next: </span>
-                      <span className="text-primary">{nextPrayer.name}</span>
-                      <span className="text-muted-foreground"> at </span>
-                      <span className="text-foreground">{nextPrayer.time}</span>
-                    </div>
-                  </div>
-                )}
-
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    size="lg"
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all shadow-lg"
-                    asChild
-                  >
-                    <a href="#courses">Enroll Now</a>
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="bg-white/95 hover:bg-white hover:scale-105 transition-all backdrop-blur-sm border-2"
-                    asChild
-                  >
-                    <a href="/donate">Donate</a>
-                  </Button>
-                </div>
-              </div>
-            </div>
 
             {/* Carousel Controls */}
             <button
