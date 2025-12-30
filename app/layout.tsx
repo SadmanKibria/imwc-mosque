@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     "Islamic education",
     "dawah Ilford",
     "youth services mosque",
+    "youth club Ilford",
+    "Muslim youth club",
+    "Islamic youth club Ilford",
+    "youth mentorship program",
+    "Muslim youth activities",
+    "free youth club Ilford",
+    "Muslim youth meetup",
+    "Islamic youth community",
   ],
   authors: [{ name: "Sadman Kibria", url: "https://sadmankibria.com" }],
   creator: "Sadman Kibria",
@@ -35,9 +43,9 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://imwcentre.co.uk",
     siteName: "Ilford Muslim Welfare Centre",
-    title: "Ilford Muslim Welfare Centre | Islamic Education & Community Services",
+    title: "Ilford Muslim Welfare Centre | Youth Club, Islamic Education & Community Services",
     description:
-      "Community mosque in Ilford offering prayer times, Hifz course, Islamic studies, and community services. Join us at 379 Oaklands Park Ave, Ilford IG1 1TG.",
+      "Community mosque in Ilford offering FREE Youth Club every Friday, prayer times, Hifz course, Islamic studies, and mentorship programs. Join us at 379 Oaklands Park Ave, Ilford IG1 1TG.",
     images: [
       {
         url: "/imwc-logo.png",
@@ -49,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ilford Muslim Welfare Centre | Islamic Education & Community Services",
+    title: "Ilford Muslim Welfare Centre | FREE Youth Club & Islamic Education",
     description:
-      "Community mosque in Ilford offering prayer times, Hifz course, Islamic studies, and community services.",
+      "Join our FREE Youth Club every Friday! Community mosque in Ilford offering prayer times, Hifz course, Islamic studies, and mentorship programs.",
     images: ["/imwc-logo.png"],
   },
   robots: {

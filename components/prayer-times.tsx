@@ -1,15 +1,11 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
 export function PrayerTimes() {
-  const [isLoaded, setIsLoaded] = useState(false)
-
   useEffect(() => {
-    const loadMasjidBoxWidget = () => {
-      // Check if script already exists
-      const existingScript = document.querySelector('script[src="https://masjidbox.com/widgets/loader.js"]')
-      if (existingScript) {
-        setIsLoaded(true)
+    const loadScript = () => {
+      // Check if script already loaded
+      if (document.querySelector('script[src*="masjidbox.com/widgets/loader.js"]')) {
         return
       }
 
@@ -18,16 +14,15 @@ export function PrayerTimes() {
       script.async = true
       script.defer = true
       script.src = "https://masjidbox.com/widgets/loader.js"
-      script.onload = () => setIsLoaded(true)
-      script.onerror = () => console.error("[v0] Failed to load MasjidBox widget")
 
       const firstScript = document.getElementsByTagName("script")[0]
-      firstScript.parentNode?.insertBefore(script, firstScript)
+      if (firstScript && firstScript.parentNode) {
+        firstScript.parentNode.insertBefore(script, firstScript)
+      }
     }
 
-    // Load on mount or after a short delay
-    const timer = setTimeout(loadMasjidBoxWidget, 100)
-
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(loadScript, 500)
     return () => clearTimeout(timer)
   }, [])
 
@@ -40,16 +35,14 @@ export function PrayerTimes() {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="w-full flex justify-center min-h-[400px] md:min-h-[500px]">
+          <div className="w-full bg-white rounded-lg shadow-lg p-6 min-h-[500px]">
             <a
               data-masjidbox-widget="WG4WGMXZmcPEyMXdFV1Dr"
-              data-masjidbox-ifr="true"
+              data-masjidbox-ifr=""
               href="https://masjidbox.com/prayer-times/ilford-muslim-welfare-centre-1686536133928"
-              className="block w-full max-w-4xl text-primary hover:underline text-center"
-              target="_blank"
-              rel="noopener noreferrer"
+              style={{ display: "block", minHeight: "450px" }}
             >
-              {!isLoaded && "Loading Prayer Times..."}
+              Prayer times Ilford Muslim Welfare Centre
             </a>
           </div>
         </div>
