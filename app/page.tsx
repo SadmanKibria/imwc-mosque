@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Icon } from "@/components/icons"
+import { PrayerWidget } from "@/components/prayer-widget"
 import { SiteShell } from "@/components/site-shell"
 
 const services = [
@@ -36,7 +37,7 @@ export default function Home() {
         <div><div className="kicker">Plan your day around salah</div><h2>Prayer times.<br/><span>Always close.</span></h2></div>
         <p>Live congregation times from our Masjidbox timetable. Tap through for the complete monthly schedule.</p>
       </div>
-      <div className="wrap prayer-frame"><iframe title="Live prayer times for Ilford Muslim Welfare Association" src="https://masjidbox.com/w/WG4WGMXZmcPEyMXdFV1Dr?i=0&v=2.2.1" loading="lazy"/></div>
+      <div className="wrap prayer-frame"><PrayerWidget /></div>
     </section>
 
     <section id="youth" className="section youth-section">
