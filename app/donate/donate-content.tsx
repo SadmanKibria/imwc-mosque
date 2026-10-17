@@ -86,7 +86,7 @@ export default function DonateContent() {
               className="w-full bg-primary hover:bg-primary/90 hover:scale-105 transition-transform"
             >
               <a
-                href="https://pay.sumup.com/b2c/Q5G88QSI"
+                href="https://pay.sumup.com/b2c/QKLP1U1U?utm_campaign=pdf&utm_medium=print&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2"

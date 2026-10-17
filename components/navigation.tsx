@@ -40,7 +40,13 @@ export function Navigation() {
             asChild
             className="bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-transform shadow-md"
           >
-            <Link href="/donate">Donate Now</Link>
+            <a
+              href="https://pay.sumup.com/b2c/QKLP1U1U?utm_campaign=pdf&utm_medium=print&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Donate Now
+            </a>
           </Button>
         </div>
 
@@ -63,7 +69,13 @@ export function Navigation() {
                 </Link>
               ))}
               <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 w-full">
-                <Link href="/donate">Donate Now</Link>
+                <a
+                  href="https://pay.sumup.com/b2c/QKLP1U1U?utm_campaign=pdf&utm_medium=print&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Donate Now
+                </a>
               </Button>
             </div>
           </SheetContent>
