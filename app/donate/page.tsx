@@ -1,22 +1,5 @@
 import type { Metadata } from "next"
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
-import { WhatsAppWidget } from "@/components/whatsapp-widget"
-import DonateContent from "./donate-content"
-
-export const metadata: Metadata = {
-  title: "Donate | Ilford Muslim Welfare Centre",
-  description:
-    "Support Ilford Muslim Welfare Centre. Donate to help our community programs, education, and welfare services.",
-}
-
-export default function DonatePage() {
-  return (
-    <main className="min-h-screen">
-      <Navigation />
-      <WhatsAppWidget />
-      <DonateContent />
-      <Footer />
-    </main>
-  )
-}
+import { SiteShell } from "@/components/site-shell"
+import { Icon } from "@/components/icons"
+export const metadata:Metadata={title:"Donate",description:"Support Ilford Muslim Welfare Association and help sustain prayer, education, youth activities and welfare support in Ilford."}
+export default function Donate(){return <SiteShell><main><section className="page-hero"><div className="wrap"><div className="kicker light">Give with purpose</div><h1>Your support<br/><em>keeps this moving.</em></h1><p>Help sustain a welcoming mosque, meaningful education, youth programmes and practical community care.</p></div></section><section className="content-page"><div className="wrap donate-layout"><article className="donate-card featured"><Icon name="heart" width="42"/><h2>Donate online</h2><p>Make a quick, secure contribution through our SumUp payment page.</p><a className="button lime" href="https://pay.sumup.com/b2c/QKLP1U1U?utm_campaign=pdf&utm_medium=print&utm_source=qr" target="_blank" rel="noreferrer">Give securely <Icon name="arrow"/></a></article><article className="donate-card"><h2>Bank transfer</h2><p>For direct donations, please use the details below.</p><div className="bank-details"><div><span>Account name</span><b>Ilford Muslim Welfare Association</b></div><div><span>Bank</span><b>Lloyds Bank</b></div><div><span>Account number</span><b>42556462</b></div><div><span>Sort code</span><b>30-99-50</b></div></div></article></div></section></main></SiteShell>}
