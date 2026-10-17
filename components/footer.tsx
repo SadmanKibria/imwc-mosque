@@ -5,6 +5,7 @@ import { MapPin, Phone, Mail, Facebook } from "lucide-react"
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground py-12">
+      {/* Developer: Sadman Kibria | Website: sadmankibria.com */}
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -116,25 +117,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-primary-foreground/20 space-y-2">
+        <div className="pt-8 border-t border-primary-foreground/20">
           <div className="text-center">
             <p className="text-sm text-primary-foreground/80">
               &copy; {new Date().getFullYear()} Ilford Muslim Welfare Centre. All rights reserved.
             </p>
             <p className="text-xs text-primary-foreground/60 mt-1">Registered in England and Wales (14615563)</p>
-          </div>
-          <div className="text-center">
-            <p className="text-sm text-primary-foreground/70">
-              Designed & Developed by{" "}
-              <a
-                href="https://sadmankibria.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold hover:underline text-primary-foreground transition-colors"
-              >
-                Sadman Kibria
-              </a>
-            </p>
           </div>
         </div>
       </div>
