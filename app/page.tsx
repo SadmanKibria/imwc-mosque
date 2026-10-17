@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/hero-section"
 import { PrayerTimes } from "@/components/prayer-times"
 import { Services } from "@/components/services"
+import { MosqueGallery } from "@/components/mosque-gallery"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <PrayerTimes />
       <Services />
+      <MosqueGallery />
       <Contact />
       <Footer />
     </main>

@@ -8,6 +8,7 @@ export function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/#prayer-times", label: "Prayer Times" },
     { href: "/#contact", label: "Contact" },
   ]
@@ -21,7 +22,7 @@ export function Navigation() {
           </div>
           <div className="hidden lg:block">
             <p className="font-serif font-bold text-foreground text-lg leading-tight">Ilford Muslim Welfare Centre</p>
-            <p className="text-xs text-muted-foreground">Serving the Community Since 1986</p>
+            <p className="text-xs text-muted-foreground">Serving the Community</p>
           </div>
         </Link>
 
@@ -35,8 +36,11 @@ export function Navigation() {
               {link.label}
             </Link>
           ))}
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-transform shadow-md">
-            Donate Now
+          <Button
+            asChild
+            className="bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-transform shadow-md"
+          >
+            <Link href="/donate">Donate Now</Link>
           </Button>
         </div>
 
@@ -58,7 +62,9 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 w-full">Donate Now</Button>
+              <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 w-full">
+                <Link href="/donate">Donate Now</Link>
+              </Button>
             </div>
           </SheetContent>
         </Sheet>
