@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { SiteShell } from "@/components/site-shell"
 import { Icon } from "@/components/icons"
 
-export const metadata: Metadata = { title: "Mosque, Madrasa & Community Services", description: "Explore Quran classes, Islamic studies, youth programmes, welfare advice and community services at Ilford Muslim Welfare Association." }
+export const metadata: Metadata = { title: "Mosque, Madrasa & Community Services", description: "Explore Quran classes, Islamic studies, youth programmes, welfare advice and community services at Ilford Masjid." }
 
 const programmes=[
   {id:"madrasa",icon:"book",title:"Hifz course",text:"Memorisation of the Qur’an with qualified teachers, individual attention and steady progress.",schedule:"Monday–Friday · 5:00–7:00 PM",fee:"£70 per month"},

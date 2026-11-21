@@ -1,6 +1,6 @@
-# Ilford Muslim Welfare Association
+# Ilford Masjid
 
-The official website for Ilford Muslim Welfare Association, a mosque and community centre serving families and young people in Ilford.
+The official website for Ilford Masjid, a mosque and community centre serving families and young people in Ilford. The mosque is operated by Ilford Muslim Welfare Association.
 
 **Live website:** [ilfordmasjid.co.uk](https://www.ilfordmasjid.co.uk/)
 
